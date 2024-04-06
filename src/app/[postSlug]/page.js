@@ -6,6 +6,16 @@ import styles from "./postSlug.module.css";
 import { loadBlogPost } from "@/helpers/file-helpers";
 import MDXComponent from "@/components/MDXComponent";
 
+export async function generateMetadata({ params }) {
+  const { postSlug } = params;
+
+  const post = await loadBlogPost(postSlug);
+
+  return {
+    title: post.frontmatter.title
+  };
+}
+
 async function BlogPost({ params }) {
   const { postSlug } = params;
 
