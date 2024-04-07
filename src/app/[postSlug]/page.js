@@ -28,7 +28,7 @@ async function BlogPost({ params }) {
         publishedOn={post.frontmatter.publishedOn}
       />
       <div className={styles.page}>
-        <MDXComponent content={post.content} />
+        <MDXComponent content={post.content}  />
       </div>
     </article>
   );
